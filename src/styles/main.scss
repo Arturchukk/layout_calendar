@@ -1,42 +1,41 @@
-
 .container {
-  display: flex;
-  justify-content: center;
   align-items: center;
+  display: flex;
   height: 100vh;
+  justify-content: center;
   padding: 40px;
 }
 
 .calendar {
-  width: calc(7 * #{$day-size} + 6 * #{$gap} + 2 * #{$padding});
   display: flex;
   flex-wrap: wrap;
   gap: $gap;
   padding: $padding;
+  width: 7 * $day-size + 6 * $gap + 2 * $padding;
 
- &__day {
-  background-color: #eee;
-  border: 1px solid #000;
-  width: $day-size;
-  height: $day-size;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: 0.5s;
-  cursor: pointer;
+  &__day {
+    align-items: center;
+    background-color: #eee;
+    border: 1px solid #000;
+    cursor: pointer;
+    display: flex;
+    height: $day-size;
+    justify-content: center;
+    transition: 0.5s;
+    width: $day-size;
 
-  &:hover {
-    background-color: #ffbfcb;
-    transform: translateY(-20px);
-  }
+    &:hover {
+      background-color: #ffbfcb;
+      transform: translateY(-20px);
+    }
 
     @for $i from 1 through 31 {
       &:nth-child(#{$i})::before {
-        content: '#{$i}';
-        font-size: 30px;
-        font-family: Arial, Helvetica, sans-serif;
-        display: flex;
         align-items: center;
+        content: '#{$i}';
+        display: flex;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 30px;
         justify-content: center;
       }
     }
